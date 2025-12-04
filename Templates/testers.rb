@@ -17,7 +17,7 @@ class Testers < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.write_exec_script libexec/"testers/testers"
+    bin.write_exec_script libexec/"testers"
   end
 
   test do
