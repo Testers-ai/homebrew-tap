@@ -1,26 +1,25 @@
-class Testers < Formula
-  desc "The Testers.ai CLI tool"
-  homepage "https://testers.ai"
+cask "testers" do
   version "__VERSION__"
+  arch arm: "arm64", intel: "x86_64"
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Testers-ai/releases/releases/download/v__VERSION__/testers-mac-arm64-__VERSION__.zip"
-      sha256 "__SHA256_ARM__"
-    end
+  sha256_arm   "__SHA256_ARM__"
+  sha256_intel "__SHA256_INTEL__"
 
-    if Hardware::CPU.intel?
-      url "https://github.com/Testers-ai/releases/releases/download/v__VERSION__/testers-mac-x86_64-__VERSION__.zip"
-      sha256 "__SHA256_INTEL__"
-    end
+  on_arm do
+    sha256 sha256_arm
+    url "https://github.com/Testers-ai/releases/releases/download/v#{version}/testers-mac-arm64-#{version}.dmg"
   end
 
-  def install
-    libexec.install Dir["*"]
-    bin.write_exec_script libexec/"testers"
+  on_intel do
+    sha256 sha256_intel
+    url "https://github.com/Testers-ai/releases/releases/download/v#{version}/testers-mac-x86_64-#{version}.dmg"
   end
 
-  test do
-    system "#{bin}/testers", "version"
-  end
+  name "Testers.ai CLI"
+  desc "Automated web testing CLI"
+  homepage "https://testers.ai"
+
+  pkg "Install Testers.ai CLI.pkg"
+
+  uninstall pkgutil: "ai.testers.pkg"
 end
