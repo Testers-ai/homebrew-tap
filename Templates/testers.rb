@@ -4,7 +4,7 @@ cask "testers" do
   on_arm do
     sha256 "__SHA256_ARM__"
     url(
-      "https://github.com/testers-ai/releases/releases/download/v#{version}/testers-mac-arm64-#{version}.dmg",
+      "https://github.com/testers-ai/releases/releases/download/v#{version}/testers-mac-arm64-#{version}.zip",
       verified: "https://github.com/testers-ai/releases/"
     )
   end
@@ -12,7 +12,7 @@ cask "testers" do
   on_intel do
     sha256 "__SHA256_INTEL__"
     url(
-      "https://github.com/testers-ai/releases/releases/download/v#{version}/testers-mac-x86_64-#{version}.dmg",
+      "https://github.com/testers-ai/releases/releases/download/v#{version}/testers-mac-x86_64-#{version}.zip",
       verified: "https://github.com/testers-ai/releases/"
     )
   end
