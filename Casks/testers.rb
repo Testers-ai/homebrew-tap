@@ -26,6 +26,6 @@ cask "testers" do
     strategy :github_latest
   end
 
-  artifact "testers", target: "#{staged_path}/testers2"
+  artifact "testers"
   binary "#{staged_path}/testers/testers", target: "testers"
 end
