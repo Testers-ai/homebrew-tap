@@ -18,17 +18,15 @@ cask "testers" do
   end
 
   name "Testers.ai CLI"
-  desc "Automated web testing CLI"
+  desc "Testers.ai CLI"
   homepage "https://testers.ai"
-
-  depends_on macos: :sonoma
 
   livecheck do
     url "https://github.com/testers-ai/releases"
     strategy :github_latest
   end
 
-  pkg "Install Testers.ai CLI.pkg"
+  artifact "testers", target: "#{HOMEBREW_PREFIX}/opt/testers"
 
-  uninstall pkgutil: "ai.testers.pkg"
+  binary "#{HOMEBREW_PREFIX}/opt/testers/testers", target: "testers"
 end
