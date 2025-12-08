@@ -26,7 +26,7 @@ cask "testers" do
     strategy :github_latest
   end
 
-  pkg "Install Testers.ai CLI.pkg"
+  artifact "testers", target: "#{HOMEBREW_PREFIX}/opt/testers"
 
-  uninstall pkgutil: "ai.testers.pkg"
+  binary "#{HOMEBREW_PREFIX}/opt/testers/testers", target: "testers"
 end
