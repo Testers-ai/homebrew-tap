@@ -26,7 +26,6 @@ cask "testers" do
     strategy :github_latest
   end
 
-  artifact "testers", target: "#{HOMEBREW_PREFIX}/opt/testers"
-
-  binary "#{HOMEBREW_PREFIX}/opt/testers/testers", target: "testers"
+  artifact "testers"
+  binary "#{staged_path}/testers/testers", target: "testers"
 end
