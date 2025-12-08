@@ -21,7 +21,7 @@ cask "testers" do
   desc "Automated web testing CLI"
   homepage "https://testers.ai"
 
-  depends_on macOS.version >= :sonoma
+  depends_on MacOS.version >= :sonoma
 
   livecheck do
     url "https://github.com/testers-ai/releases"
